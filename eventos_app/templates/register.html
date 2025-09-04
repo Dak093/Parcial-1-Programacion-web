@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Registro para {{ event.title }}</h2>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.name.label }} {{ form.name() }}<br>
+  {{ form.email.label }} {{ form.email() }}<br>
+  {{ form.submit() }}
+</form>
+{% endblock %}

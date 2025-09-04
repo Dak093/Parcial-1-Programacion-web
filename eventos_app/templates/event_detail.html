@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ event.title }}</h2>
+<p>{{ event.description }}</p>
+<p>{{ event.date }} {{ event.time }} en {{ event.location }} - {{ event.category }}</p>
+<p>Asistentes ({{ event.attendees|length }}/{{ event.max_attendees }})</p>
+<ul>
+{% for a in event.attendees %}
+  <li>{{ a.name }} - {{ a.email }}</li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('register_event', slug=event.slug) }}">Registrarme</a>
+{% endblock %}

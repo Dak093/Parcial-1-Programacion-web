@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Próximos eventos</h2>
+{% for e in events %}
+  <p><a href="{{ url_for('event_detail', slug=e.slug) }}">{{ e.title }}</a> - {{ e.date }}</p>
+{% endfor %}
+<h3>Categorías</h3>
+<ul>
+{% for c in categories %}
+  <li><a href="{{ url_for('events_by_category', category=c) }}">{{ c }}</a></li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('admin_event') }}">Crear evento</a>
+{% endblock %}

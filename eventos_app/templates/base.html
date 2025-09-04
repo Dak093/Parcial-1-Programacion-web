@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Gestión de Eventos</title>
+</head>
+<body>
+  <h1>Sistema de Gestión de Eventos</h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for cat, msg in messages %}
+      <p><strong>{{ cat }}:</strong> {{ msg }}</p>
+    {% endfor %}
+  {% endwith %}
+  <hr>
+  {% block content %}{% endblock %}
+</body>
+</html>

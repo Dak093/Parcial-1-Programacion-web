@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Crear evento</h2>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.title.label }} {{ form.title() }}<br>
+  {{ form.description.label }} {{ form.description() }}<br>
+  {{ form.date.label }} {{ form.date() }}<br>
+  {{ form.time.label }} {{ form.time() }}<br>
+  {{ form.location.label }} {{ form.location() }}<br>
+  {{ form.category.label }} {{ form.category() }}<br>
+  {{ form.max_attendees.label }} {{ form.max_attendees() }}<br>
+  {{ form.featured() }} {{ form.featured.label }}<br>
+  {{ form.submit() }}
+</form>
+{% endblock %}
